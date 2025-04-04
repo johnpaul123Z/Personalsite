@@ -100,5 +100,5 @@ function About() {
     </div>
   );
 }
-
+// CSS styles for the component
 export default About;
