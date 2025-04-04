@@ -5,14 +5,12 @@ function Home() {
   const [textIndex, setTextIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
   const [highScore, setHighScore] = useState([
-    "NEURAL NETWORK 25000",
-    "LIBRARY APP 20000",
-    "STARBUCKS 15000",
-    "PRO PARK 10000",
-    "JOHN 5000"
+    "NEURAL-NETWORK 25000",
+    "LIBRARY-APP 20000",
+    "Arcade-Profolio 15000",
   ]);
 
-  const introText = "WELCOME TO JOHN GLEITER'S ARCADE PORTFOLIO. COMPUTER SCIENCE STUDENT AT UH.";
+  const introText = "WELCOME TO JOHN GLEITERS ARCADE PORTFOLIO. COMPUTER SCIENCE STUDENT AT UNIVERSITY OF HOUSTON.";
   const displayedText = introText.substring(0, textIndex);
 
   // Typewriter effect
@@ -61,12 +59,7 @@ function Home() {
           to="/about"
           color="pink" 
         />
-        <GameCard 
-          title="CONTACT" 
-          description="GET IN TOUCH: JOHNPAUL12356789@GMAIL.COM" 
-          to="/contact"
-          color="yellow" 
-        />
+        
       </div>
 
       {/* High scores table */}
