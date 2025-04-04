@@ -10,90 +10,37 @@ function Resume() {
       
       {/* Section Selection */}
       <div className="flex justify-center mb-8">
-        <div className="flex gap-2">
-          <button 
-            className={`arcade-btn ${activeSection === 'experience' ? 'bg-purple-800' : ''}`}
-            onClick={() => setActiveSection('experience')}
-          >
-            EXPERIENCE
-          </button>
-          <button 
-            className={`arcade-btn ${activeSection === 'education' ? 'bg-purple-800' : ''}`}
-            onClick={() => setActiveSection('education')}
-          >
-            EDUCATION
-          </button>
-          <button 
-            className={`arcade-btn ${activeSection === 'skills' ? 'bg-purple-800' : ''}`}
-            onClick={() => setActiveSection('skills')}
-          >
-            SKILLS
-          </button>
-        </div>
-      </div>
+  <div className="flex gap-2">
+    <button
+      className={`arcade-btn ${activeSection === 'education' ? 'bg-purple-800' : ''}`}
+      onClick={() => setActiveSection('education')} // Fix: Set to 'education'
+    >
+      EDUCATION
+    </button>
+    <button
+      className={`arcade-btn ${activeSection === 'skills' ? 'bg-purple-800' : ''}`}
+      onClick={() => setActiveSection('skills')}
+    >
+      SKILLS
+    </button>
+  </div>
+</div>
       
-      {/* Experience Section */}
-      {activeSection === 'experience' && (
-        <div className="bg-gray-900 border-2 border-yellow-500 p-6 rounded-lg shadow-neon mb-8">
-          <h2 className="arcade-text text-xl text-yellow-400 mb-6">WORK EXPERIENCE</h2>
-          
-          <div className="exp-timeline">
-            <div className="exp-item">
-              <div className="text-pink-400 font-bold">SENIOR DEVELOPER</div>
-              <div className="text-blue-400">ARCADE TECH STUDIOS</div>
-              <div className="text-green-400 text-sm mb-2">2023 - PRESENT</div>
-              <p className="text-gray-300">
-                Led development of interactive web applications using React and Node.js.
-                Implemented responsive designs with Tailwind CSS for various client projects.
-              </p>
-            </div>
-            
-            <div className="exp-item">
-              <div className="text-pink-400 font-bold">FRONT-END DEVELOPER</div>
-              <div className="text-blue-400">PIXEL PERFECT LABS</div>
-              <div className="text-green-400 text-sm mb-2">2020 - 2023</div>
-              <p className="text-gray-300">
-                Designed and built user interfaces for web applications.
-                Collaborated with design team to implement visual elements and animations.
-              </p>
-            </div>
-            
-            <div className="exp-item">
-              <div className="text-pink-400 font-bold">JUNIOR DEVELOPER</div>
-              <div className="text-blue-400">CODE ARCADE INC.</div>
-              <div className="text-green-400 text-sm mb-2">2018 - 2020</div>
-              <p className="text-gray-300">
-                Assisted in developing and maintaining web applications.
-                Worked on bug fixes and implementation of new features.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-      
+     
       {/* Education Section */}
       {activeSection === 'education' && (
         <div className="bg-gray-900 border-2 border-cyan-500 p-6 rounded-lg shadow-neon mb-8">
           <h2 className="arcade-text text-xl text-cyan-400 mb-6">EDUCATION & TRAINING</h2>
           
           <div className="exp-timeline">
-            <div className="exp-item">
-              <div className="text-pink-400 font-bold">MASTER OF COMPUTER SCIENCE</div>
-              <div className="text-blue-400">TECH UNIVERSITY</div>
-              <div className="text-green-400 text-sm mb-2">2016 - 2018</div>
-              <p className="text-gray-300">
-                Specialized in web development and user interface design.
-                Graduated with honors.
-              </p>
-            </div>
+           
             
             <div className="exp-item">
               <div className="text-pink-400 font-bold">BACHELOR OF SCIENCE</div>
-              <div className="text-blue-400">STATE UNIVERSITY</div>
-              <div className="text-green-400 text-sm mb-2">2012 - 2016</div>
+              <div className="text-blue-400">University Of Houston</div>
+              <div className="text-green-400 text-sm mb-2">2022 - 2025</div>
               <p className="text-gray-300">
-                Major in Computer Science with minor in Digital Media.
-                Dean's List all semesters.
+                Major in Computer Science
               </p>
             </div>
           </div>
@@ -113,9 +60,7 @@ function Resume() {
               <SkillBar skill="HTML5" level={95} color="red" />
               <SkillBar skill="CSS3" level={90} color="cyan" />
               <SkillBar skill="Python" level={75} color="green" />
-              <SkillBar skill="PHP" level={65} color="purple" />
-              <SkillBar skill="Java" level={60} color="orange" />
-              <SkillBar skill="C#" level={55} color="pink" />
+            
             </div>
           </div>
           
@@ -126,10 +71,7 @@ function Resume() {
               <SkillBar skill="Node.js" level={85} color="green" />
               <SkillBar skill="Express" level={80} color="gray" />
               <SkillBar skill="Tailwind" level={90} color="cyan" />
-              <SkillBar skill="Redux" level={85} color="purple" />
-              <SkillBar skill="Next.js" level={75} color="black" />
-              <SkillBar skill="Vue.js" level={70} color="green" />
-              <SkillBar skill="Angular" level={65} color="red" />
+      
             </div>
           </div>
           
@@ -138,12 +80,9 @@ function Resume() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               <SkillBar skill="Git" level={90} color="orange" />
               <SkillBar skill="Docker" level={75} color="blue" />
-              <SkillBar skill="AWS" level={70} color="yellow" />
-              <SkillBar skill="Firebase" level={85} color="orange" />
-              <SkillBar skill="MongoDB" level={80} color="green" />
+        
               <SkillBar skill="SQL" level={75} color="blue" />
-              <SkillBar skill="GraphQL" level={70} color="pink" />
-              <SkillBar skill="Jest" level={80} color="red" />
+             
             </div>
           </div>
         </div>
@@ -151,11 +90,15 @@ function Resume() {
       
       {/* Download Resume Button */}
       <div className="text-center mt-8">
-        <button className="download-btn">
-          DOWNLOAD FULL STATS
-        </button>
-        <p className="text-yellow-400 mt-4 blink-text">PRESS START TO CONTINUE</p>
-      </div>
+  <a
+    href="/resume.pdf"
+    download="resume.pdf"
+    className="download-btn"
+  >
+    DOWNLOAD FULL STATS
+  </a>
+  <p className="text-yellow-400 mt-4 blink-text">PRESS START TO CONTINUE</p>
+</div>
     </div>
   );
 }

@@ -10,21 +10,21 @@ function About() {
       <div className="mb-10 bg-gray-900 border-2 border-blue-500 p-6 rounded-lg shadow-neon">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="w-32 h-32 bg-purple-900 border-4 border-pink-500 rounded-lg flex items-center justify-center">
-            <div className="text-5xl text-pink-400 glow-text">P1</div>
+            <div className="text-5xl text-pink-400 glow-text">JG</div>
           </div>
           <div className="flex-1">
-            <h2 className="arcade-text text-xl text-cyan-400 mb-4">DEVELOPER</h2>
+            <h2 className="arcade-text text-xl text-cyan-400 mb-4">COMPUTER SCIENCE STUDENT</h2>
             <p className="text-gray-300 mb-4">
-              I am a passionate developer with experience in building web applications using modern technologies 
-              like React, Node.js, and Tailwind CSS.
+              I am a Computer Science student at the University of Houston with a strong customer service background
+              and a growing portfolio of web development and programming projects.
             </p>
             <div className="flex flex-wrap gap-2">
+              <span className="skill-badge">PYTHON</span>
               <span className="skill-badge">REACT</span>
-              <span className="skill-badge">NODE.JS</span>
-              <span className="skill-badge">TAILWIND</span>
               <span className="skill-badge">JAVASCRIPT</span>
-              <span className="skill-badge">HTML5</span>
-              <span className="skill-badge">CSS3</span>
+              <span className="skill-badge">MYSQL</span>
+              <span className="skill-badge">JAVA</span>
+              <span className="skill-badge">HTML/CSS</span>
             </div>
           </div>
         </div>
@@ -35,16 +35,16 @@ function About() {
         <h2 className="arcade-text text-xl text-blue-400 mb-4">PLAYER STATS</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="stat-box">
+            <div className="text-pink-400">EDUCATION</div>
+            <div className="stat-value">UH CS</div>
+          </div>
+          <div className="stat-box">
+            <div className="text-pink-400">GRADUATION</div>
+            <div className="stat-value">2025</div>
+          </div>
+          <div className="stat-box">
             <div className="text-pink-400">EXPERIENCE</div>
-            <div className="stat-value">5 YRS</div>
-          </div>
-          <div className="stat-box">
-            <div className="text-pink-400">PROJECTS</div>
-            <div className="stat-value">25+</div>
-          </div>
-          <div className="stat-box">
-            <div className="text-pink-400">SKILLS</div>
-            <div className="stat-value">LVL 80</div>
+            <div className="stat-value">2+ YRS</div>
           </div>
         </div>
       </div>
@@ -54,12 +54,14 @@ function About() {
         <h2 className="arcade-text text-xl text-green-400 mb-4">CHARACTER BACKSTORY</h2>
         <div className="space-y-4 text-gray-300">
           <p>
-            Started my coding journey with a passion for creating interactive digital experiences.
-            Specializing in front-end development with a focus on React and modern JavaScript frameworks.
+            Detail-oriented Computer Science student with over 2 years of experience in customer service
+            at Starbucks and Pro Park. I've developed skills in efficiently managing high-pressure environments,
+            ensuring customer satisfaction, and creating memorable experiences.
           </p>
           <p>
-            When not coding, I enjoy playing retro arcade games, which inspired this portfolio design.
-            My goal is to combine technical excellence with creative visuals to build memorable web applications.
+            During summers, I've contributed to commercial gillnet fishing operations in Alaska,
+            managing net operations, fish processing, and boat maintenance. This diverse background
+            has shaped my strong work ethic and adaptability.
           </p>
         </div>
         
@@ -69,19 +71,19 @@ function About() {
           <ul className="space-y-2">
             <li className="flex items-center">
               <span className="text-purple-400 mr-2">→</span> 
-              Responsive UI Development
+              Full-Stack Development
             </li>
             <li className="flex items-center">
               <span className="text-purple-400 mr-2">→</span> 
-              Interactive Animations
+              Customer Service Excellence
             </li>
             <li className="flex items-center">
               <span className="text-purple-400 mr-2">→</span> 
-              Performance Optimization
+              Risk Management
             </li>
             <li className="flex items-center">
               <span className="text-purple-400 mr-2">→</span> 
-              Creative Problem Solving
+              Data Structures & Algorithms
             </li>
           </ul>
         </div>
@@ -89,10 +91,11 @@ function About() {
       
       {/* Contact Section */}
       <div className="text-center mt-10">
-        <button className="game-select-btn">
+        <a href="mailto:johnpaul12356789@gmail.com" className="game-select-btn inline-block">
           CONTACT PLAYER
-        </button>
+        </a>
         <p className="text-yellow-400 mt-4 blink-text">INSERT COIN TO CONTINUE</p>
+        <p className="text-green-400 mt-2">TEL: +1 (815) 994-8281</p>
       </div>
     </div>
   );

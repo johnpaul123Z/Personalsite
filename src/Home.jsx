@@ -5,14 +5,14 @@ function Home() {
   const [textIndex, setTextIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
   const [highScore, setHighScore] = useState([
-    "AAA 25000",
-    "BBB 20000",
-    "CDE 15000",
-    "FGH 10000",
-    "YOU 5000"
+    "NEURAL NETWORK 25000",
+    "LIBRARY APP 20000",
+    "STARBUCKS 15000",
+    "PRO PARK 10000",
+    "JOHN 5000"
   ]);
 
-  const introText = "WELCOME TO MY ARCADE PORTFOLIO. CHOOSE A GAME FROM THE MENU.";
+  const introText = "WELCOME TO JOHN GLEITER'S ARCADE PORTFOLIO. COMPUTER SCIENCE STUDENT AT UH.";
   const displayedText = introText.substring(0, textIndex);
 
   // Typewriter effect
@@ -45,39 +45,39 @@ function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <GameCard 
           title="PROJECTS" 
-          description="CHECK OUT MY LATEST ARCADE HITS" 
+          description="CHECK OUT MY LATEST CODING PROJECTS" 
           to="/projects"
           color="blue" 
         />
         <GameCard 
           title="RESUME" 
-          description="VIEW MY PLAYER STATS & ACHIEVEMENTS" 
+          description="VIEW MY EXPERIENCE & SKILLS" 
           to="/resume"
           color="green" 
         />
         <GameCard 
           title="ABOUT" 
-          description="LEARN ABOUT THE DEVELOPER BEHIND THE GAMES" 
+          description="LEARN ABOUT MY BACKGROUND & JOURNEY" 
           to="/about"
           color="pink" 
         />
         <GameCard 
           title="CONTACT" 
-          description="SEND A MESSAGE TO PLAYER ONE" 
-          to="/about"
+          description="GET IN TOUCH: JOHNPAUL12356789@GMAIL.COM" 
+          to="/contact"
           color="yellow" 
         />
       </div>
 
       {/* High scores table */}
       <div className="mt-auto">
-        <h2 className="text-xl text-yellow-300 font-bold mb-2">HIGH SCORES</h2>
+        <h2 className="text-xl text-yellow-300 font-bold mb-2">TOP ACHIEVEMENTS</h2>
         <div className="bg-gray-900 p-4 rounded-lg border-2 border-blue-500">
           <table className="w-full text-green-400 font-mono">
             <thead>
               <tr>
                 <th className="text-left">RANK</th>
-                <th className="text-left">PLAYER</th>
+                <th className="text-left">PROJECT</th>
                 <th className="text-right">SCORE</th>
               </tr>
             </thead>

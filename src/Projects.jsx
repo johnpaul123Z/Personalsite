@@ -8,35 +8,43 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "SPACE INVADERS",
-      description: "A React web app that helps users visualize data with interactive charts",
-      tech: ["React", "D3.js", "Tailwind CSS"],
+      title: "NEURAL NETWORK",
+      description: "A neural network implementation using NumPy to recognize handwritten digits from the MNIST dataset, with an interactive drawing interface for testing.",
+      tech: ["Python", "NumPy", "ML", "UI Design"],
       image: "/project1.png",
-      color: "blue"
+      color: "blue",
+      link: "#", // Replace with actual link
+      role: "Developer"
     },
     {
       id: 2,
-      title: "GALAGA API",
-      description: "A Node.js API with authentication and database integration",
-      tech: ["Node.js", "Express", "MongoDB", "JWT"],
+      title: "LIBRARY WEB APP",
+      description: "Full-stack library web application with admin portal for managing books, users, and inventory",
+      tech: ["React.js", "JavaScript", "HTML/CSS", "Backend"],
       image: "/project2.png",
-      color: "green"
+      color: "green",
+      link: "github.com/nate-bar/team14-libraryapp", 
+      role: "Backend Developer"
     },
     {
       id: 3,
-      title: "PAC-MAN PORTFOLIO",
-      description: "This portfolio website with arcade-inspired design",
-      tech: ["React", "React Router", "Tailwind CSS"],
+      title: "ARCADE PORTFOLIO",
+      description: "This portfolio website with arcade-inspired design and interactive elements",
+      tech: ["React", "React Router", "Tailwind CSS", "JavaScript"],
       image: "/project3.png",
-      color: "yellow"
+      color: "yellow",
+      link: "jresume.onrender.com/",
+      role: "Developer"
     },
     {
       id: 4,
-      title: "TETRIS TASK TRACKER",
-      description: "A task management application with drag-and-drop functionality",
-      tech: ["React", "Redux", "Firebase"],
+      title: "GITHUB REPOS",
+      description: "Check out my additional projects and code repositories on GitHub",
+      tech: ["Various Languages", "Open Source", "Coding Examples"],
       image: "/project4.png",
-      color: "pink"
+      color: "pink",
+      link: "github.com/johnpaul123Z?tab=repositories",
+      role: "Developer"
     }
   ];
 
@@ -88,7 +96,7 @@ function Projects() {
       
       {loadingProject && loadingProgress < 100 && (
         <div className="mb-8">
-          <p className="text-xl text-yellow-300 mb-2">LOADING GAME...</p>
+          <p className="text-xl text-yellow-300 mb-2">LOADING PROJECT...</p>
           <div className="w-full bg-gray-800 rounded-full h-4">
             <div 
               className="bg-green-400 h-4 rounded-full transition-all duration-300"
@@ -159,7 +167,7 @@ function ProjectCard({ project, onClick }) {
       {hover && (
         <div className="text-center mt-4">
           <span className="inline-block px-4 py-2 bg-blue-600 text-white rounded animate-pulse">
-            INSERT COIN TO PLAY
+            INSERT COIN TO VIEW
           </span>
         </div>
       )}
@@ -184,16 +192,16 @@ function ProjectDetail({ project }) {
           INFO
         </button>
         <button 
-          className={`px-4 py-2 ${activeSection === 'screenshots' ? 'bg-blue-800 text-white rounded-t' : 'text-blue-400'}`}
-          onClick={() => setActiveSection('screenshots')}
+          className={`px-4 py-2 ${activeSection === 'technologies' ? 'bg-blue-800 text-white rounded-t' : 'text-blue-400'}`}
+          onClick={() => setActiveSection('technologies')}
         >
-          SCREENSHOTS
+          TECHNOLOGIES
         </button>
         <button 
-          className={`px-4 py-2 ${activeSection === 'controls' ? 'bg-blue-800 text-white rounded-t' : 'text-blue-400'}`}
-          onClick={() => setActiveSection('controls')}
+          className={`px-4 py-2 ${activeSection === 'details' ? 'bg-blue-800 text-white rounded-t' : 'text-blue-400'}`}
+          onClick={() => setActiveSection('details')}
         >
-          CONTROLS
+          DETAILS
         </button>
       </div>
       
@@ -206,89 +214,102 @@ function ProjectDetail({ project }) {
           </div>
           
           <div className="p-4 bg-gray-800 rounded-lg">
-            <h3 className="text-xl text-yellow-300 mb-2">TECHNOLOGIES</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((tech, index) => (
-                <span 
-                  key={index} 
-                  className="px-3 py-1 bg-blue-900 text-white rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+            <h3 className="text-xl text-yellow-300 mb-2">ROLE</h3>
+            <p className="text-gray-300">{project.role}</p>
           </div>
           
-          <div className="p-4 bg-gray-800 rounded-lg">
-            <h3 className="text-xl text-yellow-300 mb-2">ACHIEVEMENTS</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Responsive Design</li>
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Optimized Performance</li>
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Accessible Interface</li>
-            </ul>
-          </div>
+          {project.link && (
+            <div className="p-4 bg-gray-800 rounded-lg">
+              <h3 className="text-xl text-yellow-300 mb-2">PROJECT LINK</h3>
+              <a 
+                href={`https://${project.link}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                {project.link}
+              </a>
+            </div>
+          )}
         </div>
       )}
       
-      {activeSection === 'screenshots' && (
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
-              <p className="text-gray-500">Screenshot 1</p>
-            </div>
-            <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
-              <p className="text-gray-500">Screenshot 2</p>
-            </div>
-            <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
-              <p className="text-gray-500">Screenshot 3</p>
-            </div>
-            <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
-              <p className="text-gray-500">Screenshot 4</p>
-            </div>
-          </div>
-        </div>
-      )}
-      
-      {activeSection === 'controls' && (
+      {activeSection === 'technologies' && (
         <div className="p-4 bg-gray-800 rounded-lg">
-          <h3 className="text-xl text-yellow-300 mb-4">HOW TO PLAY</h3>
+          <h3 className="text-xl text-yellow-300 mb-4">TECHNOLOGIES USED</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {project.tech.map((tech, index) => (
+              <div 
+                key={index}
+                className="bg-gray-700 p-3 rounded-lg text-center border border-gray-600"
+              >
+                <span className="text-cyan-400">{tech}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      {activeSection === 'details' && (
+        <div className="p-4 bg-gray-800 rounded-lg">
+          <h3 className="text-xl text-yellow-300 mb-4">PROJECT DETAILS</h3>
           <div className="space-y-6">
-            <div className="flex items-center space-x-6">
-              <div className="bg-gray-700 p-3 rounded-lg">
-                <div className="grid grid-cols-3 gap-2 text-center">
-                  <div></div>
-                  <div className="bg-blue-600 p-2 rounded">↑</div>
-                  <div></div>
-                  <div className="bg-blue-600 p-2 rounded">←</div>
-                  <div></div>
-                  <div className="bg-blue-600 p-2 rounded">→</div>
-                  <div></div>
-                  <div className="bg-blue-600 p-2 rounded">↓</div>
-                  <div></div>
+            <div>
+              {project.id === 1 && (
+                <div className="space-y-2 text-gray-300">
+                  <p>• Custom neural network implementation for handwritten digit recognition</p>
+                  <p>• Architecture: 784 input neurons, 128 hidden neurons, 10 output neurons</p>
+                  <p>• Interactive drawing interface for real-time testing</p>
+                  <p>• Configurable speed/accuracy tradeoffs</p>
                 </div>
-              </div>
-              <div>
-                <p className="text-gray-300">Use arrow keys to navigate</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-6">
-              <div className="flex space-x-2">
-                <div className="bg-red-600 w-12 h-12 rounded-full flex items-center justify-center">A</div>
-                <div className="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center">B</div>
-              </div>
-              <div>
-                <p className="text-gray-300">A: Select / B: Back</p>
-              </div>
+              )}
+              
+              {project.id === 2 && (
+                <div className="space-y-2 text-gray-300">
+                  <p>• Full-stack library web application with admin portal</p>
+                  <p>• Admin features for managing books, users, and inventory</p>
+                  <p>• Dynamic item display components using React.js</p>
+                  <p>• Collaborative development using Git/GitHub</p>
+                </div>
+              )}
+              
+              {project.id === 3 && (
+                <div className="space-y-2 text-gray-300">
+                  <p>• Arcade-themed personal portfolio website</p>
+                  <p>• Interactive elements with animations and state management</p>
+                  <p>• Responsive design for all device sizes</p>
+                  <p>• Custom UI components and styling</p>
+                </div>
+              )}
+              
+              {project.id === 4 && (
+                <div className="space-y-2 text-gray-300">
+                  <p>• Collection of various programming projects and code samples</p>
+                  <p>• Demonstrates proficiency in multiple programming languages</p>
+                  <p>• Open source contributions and personal projects</p>
+                  <p>• Visit my GitHub for more examples of my work</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
       )}
       
       <div className="mt-6 text-center">
-        <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-500 transform transition hover:scale-105">
-          PLAY NOW
-        </button>
+        {project.link ? (
+          <a 
+            href={`https://${project.link}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-500 transform transition hover:scale-105 inline-block"
+          >
+            VISIT PROJECT
+          </a>
+        ) : (
+          <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-500 transform transition hover:scale-105">
+            PROJECT DETAILS
+          </button>
+        )}
       </div>
     </div>
   );
