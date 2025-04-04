@@ -1,79 +1,196 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import Projects from './Projects';
-import Resume from './Resume';
-import About from './About';
+import React, { useState } from 'react';
 
-function App() {
+function Resume() {
+  const [activeSection, setActiveSection] = useState('experience');
+  
   return (
-    <Router>
-      <div className="min-h-screen bg-black text-white arcade-bg">
-        {/* Arcade Cabinet Header */}
-        <header className="bg-gradient-to-r from-purple-900 to-blue-900 border-b-4 border-pink-500 shadow-lg p-4 fixed w-full z-10">
-          <div className="container mx-auto flex justify-between items-center">
-            {/* Arcade Logo */}
-            <div className="text-3xl font-bold arcade-text tracking-wider text-pink-400 glow-text">
-              <span className="text-yellow-300">PIXEL</span>FOLIO
-            </div>
-
-            {/* Navigation Links */}
-            <nav className="hidden md:flex space-x-4">
-              <Link to="/" className="arcade-btn">
-                HOME
-              </Link>
-              <Link to="/projects" className="arcade-btn">
-                PROJECTS
-              </Link>
-              <Link to="/resume" className="arcade-btn">
-                RESUME
-              </Link>
-              <Link to="/about" className="arcade-btn">
-                ABOUT
-              </Link>
-            </nav>
-            
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <button className="arcade-btn">MENU</button>
-            </div>
-          </div>
-        </header>
-
-        {/* Main Content */}
-        <main className="pt-24 pb-16 container mx-auto p-6">
-          <div className="arcade-screen bg-gray-900 border-4 border-pink-500 rounded-lg shadow-neon p-6">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/about" element={<About />} />
-            </Routes>
-          </div>
-        </main>
-        
-        {/* Arcade Cabinet Controls */}
-        <footer className="fixed bottom-0 w-full bg-gradient-to-r from-purple-900 to-blue-900 border-t-4 border-pink-500 p-3">
-          <div className="container mx-auto flex justify-center md:justify-between items-center">
-            <div className="hidden md:flex space-x-4">
-              <div className="h-6 w-6 rounded-full bg-red-500 border-2 border-white"></div>
-              <div className="h-6 w-6 rounded-full bg-blue-500 border-2 border-white"></div>
-              <div className="h-6 w-6 rounded-full bg-yellow-500 border-2 border-white"></div>
-              <div className="h-6 w-6 rounded-full bg-green-500 border-2 border-white"></div>
-            </div>
-            <div className="text-sm text-center glow-text">
-              © 2025 PIXELFOLIO • INSERT COIN TO CONTINUE
-            </div>
-            <div className="hidden md:block">
-              <div className="w-10 h-10 rounded-full bg-black border-2 border-yellow-400 flex items-center justify-center text-yellow-400">
-                P1
-              </div>
-            </div>
-          </div>
-        </footer>
+    <div className="p-6">
+      <h1 className="arcade-text text-3xl font-bold mb-6 text-yellow-400 glow-text">PLAYER RESUME</h1>
+      <p className="text-cyan-400 text-center mb-8">CHARACTER ACHIEVEMENT LOG</p>
+      
+      {/* Section Selection */}
+      <div className="flex justify-center mb-8">
+        <div className="flex gap-2">
+          <button 
+            className={`arcade-btn ${activeSection === 'experience' ? 'bg-purple-800' : ''}`}
+            onClick={() => setActiveSection('experience')}
+          >
+            EXPERIENCE
+          </button>
+          <button 
+            className={`arcade-btn ${activeSection === 'education' ? 'bg-purple-800' : ''}`}
+            onClick={() => setActiveSection('education')}
+          >
+            EDUCATION
+          </button>
+          <button 
+            className={`arcade-btn ${activeSection === 'skills' ? 'bg-purple-800' : ''}`}
+            onClick={() => setActiveSection('skills')}
+          >
+            SKILLS
+          </button>
+        </div>
       </div>
-    </Router>
+      
+      {/* Experience Section */}
+      {activeSection === 'experience' && (
+        <div className="bg-gray-900 border-2 border-yellow-500 p-6 rounded-lg shadow-neon mb-8">
+          <h2 className="arcade-text text-xl text-yellow-400 mb-6">WORK EXPERIENCE</h2>
+          
+          <div className="exp-timeline">
+            <div className="exp-item">
+              <div className="text-pink-400 font-bold">SENIOR DEVELOPER</div>
+              <div className="text-blue-400">ARCADE TECH STUDIOS</div>
+              <div className="text-green-400 text-sm mb-2">2023 - PRESENT</div>
+              <p className="text-gray-300">
+                Led development of interactive web applications using React and Node.js.
+                Implemented responsive designs with Tailwind CSS for various client projects.
+              </p>
+            </div>
+            
+            <div className="exp-item">
+              <div className="text-pink-400 font-bold">FRONT-END DEVELOPER</div>
+              <div className="text-blue-400">PIXEL PERFECT LABS</div>
+              <div className="text-green-400 text-sm mb-2">2020 - 2023</div>
+              <p className="text-gray-300">
+                Designed and built user interfaces for web applications.
+                Collaborated with design team to implement visual elements and animations.
+              </p>
+            </div>
+            
+            <div className="exp-item">
+              <div className="text-pink-400 font-bold">JUNIOR DEVELOPER</div>
+              <div className="text-blue-400">CODE ARCADE INC.</div>
+              <div className="text-green-400 text-sm mb-2">2018 - 2020</div>
+              <p className="text-gray-300">
+                Assisted in developing and maintaining web applications.
+                Worked on bug fixes and implementation of new features.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Education Section */}
+      {activeSection === 'education' && (
+        <div className="bg-gray-900 border-2 border-cyan-500 p-6 rounded-lg shadow-neon mb-8">
+          <h2 className="arcade-text text-xl text-cyan-400 mb-6">EDUCATION & TRAINING</h2>
+          
+          <div className="exp-timeline">
+            <div className="exp-item">
+              <div className="text-pink-400 font-bold">MASTER OF COMPUTER SCIENCE</div>
+              <div className="text-blue-400">TECH UNIVERSITY</div>
+              <div className="text-green-400 text-sm mb-2">2016 - 2018</div>
+              <p className="text-gray-300">
+                Specialized in web development and user interface design.
+                Graduated with honors.
+              </p>
+            </div>
+            
+            <div className="exp-item">
+              <div className="text-pink-400 font-bold">BACHELOR OF SCIENCE</div>
+              <div className="text-blue-400">STATE UNIVERSITY</div>
+              <div className="text-green-400 text-sm mb-2">2012 - 2016</div>
+              <p className="text-gray-300">
+                Major in Computer Science with minor in Digital Media.
+                Dean's List all semesters.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Skills Section */}
+      {activeSection === 'skills' && (
+        <div className="bg-gray-900 border-2 border-green-500 p-6 rounded-lg shadow-neon mb-8">
+          <h2 className="arcade-text text-xl text-green-400 mb-6">SKILL TREE</h2>
+          
+          <div className="mb-6">
+            <h3 className="text-pink-400 mb-2">PROGRAMMING LANGUAGES</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <SkillBar skill="JavaScript" level={90} color="yellow" />
+              <SkillBar skill="TypeScript" level={80} color="blue" />
+              <SkillBar skill="HTML5" level={95} color="red" />
+              <SkillBar skill="CSS3" level={90} color="cyan" />
+              <SkillBar skill="Python" level={75} color="green" />
+              <SkillBar skill="PHP" level={65} color="purple" />
+              <SkillBar skill="Java" level={60} color="orange" />
+              <SkillBar skill="C#" level={55} color="pink" />
+            </div>
+          </div>
+          
+          <div className="mb-6">
+            <h3 className="text-pink-400 mb-2">FRAMEWORKS & LIBRARIES</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <SkillBar skill="React" level={95} color="blue" />
+              <SkillBar skill="Node.js" level={85} color="green" />
+              <SkillBar skill="Express" level={80} color="gray" />
+              <SkillBar skill="Tailwind" level={90} color="cyan" />
+              <SkillBar skill="Redux" level={85} color="purple" />
+              <SkillBar skill="Next.js" level={75} color="black" />
+              <SkillBar skill="Vue.js" level={70} color="green" />
+              <SkillBar skill="Angular" level={65} color="red" />
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-pink-400 mb-2">TOOLS & TECHNOLOGIES</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <SkillBar skill="Git" level={90} color="orange" />
+              <SkillBar skill="Docker" level={75} color="blue" />
+              <SkillBar skill="AWS" level={70} color="yellow" />
+              <SkillBar skill="Firebase" level={85} color="orange" />
+              <SkillBar skill="MongoDB" level={80} color="green" />
+              <SkillBar skill="SQL" level={75} color="blue" />
+              <SkillBar skill="GraphQL" level={70} color="pink" />
+              <SkillBar skill="Jest" level={80} color="red" />
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Download Resume Button */}
+      <div className="text-center mt-8">
+        <button className="download-btn">
+          DOWNLOAD FULL STATS
+        </button>
+        <p className="text-yellow-400 mt-4 blink-text">PRESS START TO CONTINUE</p>
+      </div>
+    </div>
   );
 }
 
-export default App;
+// Skill Bar Component
+function SkillBar({ skill, level, color }) {
+  const colorMap = {
+    blue: "bg-blue-500",
+    green: "bg-green-500",
+    red: "bg-red-500",
+    yellow: "bg-yellow-500",
+    purple: "bg-purple-500",
+    cyan: "bg-cyan-500",
+    orange: "bg-orange-500",
+    pink: "bg-pink-500",
+    gray: "bg-gray-500",
+    black: "bg-gray-800"
+  };
+  
+  const bgColor = colorMap[color] || "bg-blue-500";
+  
+  return (
+    <div className="mb-2">
+      <div className="flex justify-between mb-1">
+        <span className="text-xs text-white">{skill}</span>
+        <span className="text-xs text-white">{level}%</span>
+      </div>
+      <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+        <div 
+          className={`h-full ${bgColor} rounded-full`} 
+          style={{ width: `${level}%` }}
+        ></div>
+      </div>
+    </div>
+  );
+}
+
+export default Resume;

@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import Projects from './Projects';
 import Resume from './Resume';
 import About from './About';
+import './App.css';
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <Router>
       <div className="min-h-screen bg-black text-white arcade-bg">
@@ -35,9 +42,31 @@ function App() {
             
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <button className="arcade-btn">MENU</button>
+              <button className="arcade-btn" onClick={toggleMobileMenu}>
+                MENU
+              </button>
             </div>
           </div>
+          
+          {/* Mobile Menu Dropdown */}
+          {mobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-purple-900 to-blue-900 border-b-4 border-pink-500 p-4">
+              <div className="flex flex-col space-y-2">
+                <Link to="/" className="arcade-btn w-full text-center" onClick={() => setMobileMenuOpen(false)}>
+                  HOME
+                </Link>
+                <Link to="/projects" className="arcade-btn w-full text-center" onClick={() => setMobileMenuOpen(false)}>
+                  PROJECTS
+                </Link>
+                <Link to="/resume" className="arcade-btn w-full text-center" onClick={() => setMobileMenuOpen(false)}>
+                  RESUME
+                </Link>
+                <Link to="/about" className="arcade-btn w-full text-center" onClick={() => setMobileMenuOpen(false)}>
+                  ABOUT
+                </Link>
+              </div>
+            </div>
+          )}
         </header>
 
         {/* Main Content */}
