@@ -13,7 +13,7 @@ function Projects() {
       tech: ["Python", "NumPy", "ML", "UI Design"],
       image: "/project1.png",
       color: "blue",
-      link: "#", // Replace with actual link
+      link: "github.com/johnpaul123Z/Neural-Network-", 
       role: "Developer"
     },
     {
@@ -33,7 +33,7 @@ function Projects() {
       tech: ["React", "React Router", "Tailwind CSS", "JavaScript"],
       image: "/project3.png",
       color: "yellow",
-      link: "jresume.onrender.com/",
+      link: "github.com/johnpaul123Z/Personalsite",
       role: "Developer"
     },
     {
