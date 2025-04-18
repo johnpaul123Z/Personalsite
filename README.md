@@ -34,4 +34,5 @@ About: Personal info in arcade character format
 MIT License
 
 Made by John Gleiter
+
 link https://personalsite-77yi.onrender.com/resume 
