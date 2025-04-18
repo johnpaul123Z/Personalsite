@@ -1,12 +1,42 @@
-# React + Vite
+PixelFolio - Arcade-Themed Portfolio
+Show Image
+Show Image
+🎮 Overview
+An interactive arcade-themed portfolio website showcasing my projects and skills as a Computer Science student, featuring retro gaming aesthetics with neon effects and pixel art design.
+✨ Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Retro arcade cabinet UI with animated elements
+Responsive design for all devices
+Project showcase with interactive cards
+Skills visualization and education info
+Google Analytics integration
 
-Currently, two official plugins are available:
+🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React 19 + React Router 7
+Vite for fast builds
+Tailwind CSS
+ES6+ JavaScript
 
-## Expanding the ESLint configuration
+🚀 Quick Start
+bash# Install dependencies
+npm install
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+📋 Pages
+
+Home: Landing page with typewriter effect
+Projects: Interactive coding project showcase
+Resume: Skills and education visualization
+About: Personal info in arcade character format
+
+🔧 Customization
+Update personal information in component files and customize styling in global.css.
+📄 License
+MIT License
+
+Made by John Gleiter
