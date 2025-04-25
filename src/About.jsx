@@ -54,14 +54,9 @@ function About() {
         <h2 className="arcade-text text-xl text-green-400 mb-4">CHARACTER BACKSTORY</h2>
         <div className="space-y-4 text-gray-300">
           <p>
-            Detail-oriented Computer Science student with over 2 years of experience in customer service
-            at Starbucks and Pro Park. I've developed skills in efficiently managing high-pressure environments,
-            ensuring customer satisfaction, and creating memorable experiences.
-          </p>
-          <p>
-            During summers, I've contributed to commercial gillnet fishing operations in Alaska,
-            managing net operations, fish processing, and boat maintenance. This diverse background
-            has shaped my strong work ethic and adaptability.
+          Computer Science student at the University of Houston seeking a software development role to apply skills in Python, React.js,
+and backend engineering. Experienced in full-stack projects, neural networks, and team collaboration, with a strong focus on
+problem-solving and coding.
           </p>
         </div>
         
