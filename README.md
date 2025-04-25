@@ -35,4 +35,4 @@ MIT License
 
 Made by John Gleiter
 
-link https://personalsite-77yi.onrender.com/resume 
+link https://personalsite-77yi.onrender.com/
