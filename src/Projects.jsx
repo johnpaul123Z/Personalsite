@@ -53,7 +53,7 @@ function Projects() {
       tech: ["Python", "Flask", "HTML/CSS", "Docker", "SQLAlchemy", "O365"],
       image: "/project5.png",
       color: "blue",
-      link: "https://github.com/jomosquito/Edmonton-v.02", 
+      link: "github.com/jomosquito/Edmonton-v.02", 
       role: "Contributor",
       youtube: "https://www.youtube.com/watch?v=owLFAySZoO4&feature=youtu.be"
     }
